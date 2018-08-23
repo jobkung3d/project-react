@@ -26,3 +26,25 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+@font-face {
+    font-family: 'pridilight';
+    src: url('./fonts/pridi-light-webfont.woff2') format('woff2'),
+         url('./fonts/pridi-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'chonburiregular';
+    src: url('./fonts/chonburi-regular-webfont.woff2') format('woff2'),
+         url('./fonts/chonburi-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
