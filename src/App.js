@@ -23,6 +23,8 @@ class App extends Component {
       <div>
         <Header />
         <Section1 />
+        <About />
+        <Article />
         <Footer />
       </div>
     );
@@ -60,12 +62,108 @@ class Section1 extends Component {
     );
   }
 }
+class About extends Component {
+  render() {
+    return (
+      <section className="about">
+        <div className="container">
+            <div className="page-title">About</div>
+            <div className="row">
+                <div className="offset-lg-1 col-lg-6">
+                    <div className="ab-dtl">
+                        <span>
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Etiam scelerisque risus
+                        ornare egestas commodo. Quisque metus
+                        sapien, pellentesque nec purus sit amet,
+                        tempus euismod elit. Integer mollis dolor
+                        a posuere interdum. Morbi a lorem non
+                        mi bibendum gravida ut et nibh. Sed id
+                        odio rhoncus, congue dolor et, varius arcu.
+                         Nulla sit amet posuere ligula. Proin
+                        consectetur lobortis risus, vel pellentesque
+                         erat. Integer porta facilisis euismod.
+                        Maecenas blandit elit ut massa convallis,
+                        </span>
+                    </div>
+                </div>
+                <div className="col-lg-5">
+                    <div className="ab-img box-shadow d-none d-sm-block"></div>
+                </div>
+            </div>
+        </div>
+      </section>
+    );
+  }
+}
+
+class Article extends Component {
+  render() {
+    return (
+      <section className="article">
+        <div className="container">
+            <div className="page-title">Article</div>
+            <div className="row">
+                <div className="col-md-6 col-lg-3">
+                    <div className="card">
+                        <div className="card-thumbnail box-shadow"></div>
+                        <div className="card-detail">
+                            <div className="card-title">Title</div>
+                            <div className="card-excerpt">
+                                Lorem Ipsum is simply dummy text of the
+                                printing and typesetting
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-md-6 col-lg-3">
+                    <div className="card">
+                        <div className="card-thumbnail box-shadow"></div>
+                        <div className="card-detail">
+                            <div className="card-title">Title</div>
+                            <div className="card-excerpt">
+                                Lorem Ipsum is simply dummy text of the
+                                printing and typesetting
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-md-6 col-lg-3">
+                    <div className="card">
+                        <div className="card-thumbnail box-shadow"></div>
+                        <div className="card-detail">
+                            <div className="card-title">Title</div>
+                            <div className="card-excerpt">
+                                Lorem Ipsum is simply dummy text of the
+                                printing and typesetting
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-md-6 col-lg-3">
+                    <div className="card">
+                        <div className="card-thumbnail box-shadow"></div>
+                        <div className="card-detail">
+                            <div className="card-title">Title</div>
+                            <div className="card-excerpt">
+                                Lorem Ipsum is simply dummy text of the
+                                printing and typesetting
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    );
+  }
+}
 
 class Footer extends Component {
   render() {
     return (
-      <div>
-        hello footer
+      <div className="footer">
+        <div className="container">©2018 worachat.com. All rights reserved | Designed By Worachat Patanawanich</div>
       </div>
     );
   }
