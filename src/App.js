@@ -98,11 +98,29 @@ class About extends Component {
 }
 
 class Article extends Component {
+  constructor(props) {
+   super(props);
+
+   this.state = {
+     data: []
+   };
+  }
+
+  componentDidMount() {
+  fetch('http://127.0.0.1/project-react/wordpress/wp-json/wp/v2/posts')
+     .then(response => response.json())
+     .then(data =>  this.setState({ data }));
+
+  }
   render() {
     return (
+
       <section className="article">
         <div className="container">
             <div className="page-title">Article</div>
+            {this.state.data.map(function(obj, i){
+              return (<div key={obj.id}>{obj.id}</div>);
+            })}
             <div className="row">
                 <div className="col-md-6 col-lg-3">
                     <div className="card">
