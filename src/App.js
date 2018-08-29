@@ -56,7 +56,10 @@ class Section1 extends Component {
       <section className="section-1">
         <div className="sec1-bg"></div>
         <div className="quote">
-          <div className="container">Nulla molestie lacinia justo, et tincidunt metus euismod nec. </div>
+          <div className="container">
+            <p>If people hate you don’t hate them, Do good die great.</p>
+            <p className="text-right"> - Jordan The Wholesome VRChat</p>
+          </div>
         </div>
       </section>
     );
@@ -71,20 +74,15 @@ class About extends Component {
             <div className="row">
                 <div className="offset-lg-1 col-lg-6">
                     <div className="ab-dtl">
-                        <span>
-                        Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Etiam scelerisque risus
-                        ornare egestas commodo. Quisque metus
-                        sapien, pellentesque nec purus sit amet,
-                        tempus euismod elit. Integer mollis dolor
-                        a posuere interdum. Morbi a lorem non
-                        mi bibendum gravida ut et nibh. Sed id
-                        odio rhoncus, congue dolor et, varius arcu.
-                         Nulla sit amet posuere ligula. Proin
-                        consectetur lobortis risus, vel pellentesque
-                         erat. Integer porta facilisis euismod.
-                        Maecenas blandit elit ut massa convallis,
-                        </span>
+                        <div className="ab-dtl-ct">
+                          <p>สวัสดีครับ ชื่อนาย วรชาติ ปธานวนิช</p>
+                          <p>บ้านเกิดอยู่ที่สระบุรี แต่มาทำงานที่กรุงเทพ</p>
+                          <p>จะว่าหลงแสงสีก็ว่าได้ ฮ่า ๆ </p>
+                          <p>ชอบการเขียนเว็บ มันเป็นงานที่สนุกและท้าทาย</p>
+                          <p>ในเวลาเดียวกัน</p>
+                          <p>ตอนนี้เล่นเกมส์อะไรบ้าง ?</p>
+                          <p>OverWatch, Pubg mobile</p>
+                        </div>
                     </div>
                 </div>
                 <div className="col-lg-5">
@@ -113,63 +111,26 @@ class Article extends Component {
 
   }
   render() {
+    console.log(this.state.data);
     return (
 
       <section className="article">
         <div className="container">
             <div className="page-title">Article</div>
-            {this.state.data.map(function(obj, i){
-              return (<div key={obj.id}>{obj.id}</div>);
-            })}
             <div className="row">
-                <div className="col-md-6 col-lg-3">
-                    <div className="card">
-                        <div className="card-thumbnail box-shadow"></div>
-                        <div className="card-detail">
-                            <div className="card-title">Title</div>
-                            <div className="card-excerpt">
-                                Lorem Ipsum is simply dummy text of the
-                                printing and typesetting
+              {this.state.data.map(function(obj, i){
+                return (
+                    <div  key={obj.id} className="col-md-6 col-lg-3">
+                        <div className="card">
+                            <div className="card-thumbnail box-shadow"></div>
+                            <div className="card-detail">
+                                <div className="card-title"  dangerouslySetInnerHTML={{__html: obj.title.rendered}}></div>
+                                <div className="card-excerpt" dangerouslySetInnerHTML={{__html: obj.excerpt.rendered}}></div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="col-md-6 col-lg-3">
-                    <div className="card">
-                        <div className="card-thumbnail box-shadow"></div>
-                        <div className="card-detail">
-                            <div className="card-title">Title</div>
-                            <div className="card-excerpt">
-                                Lorem Ipsum is simply dummy text of the
-                                printing and typesetting
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-6 col-lg-3">
-                    <div className="card">
-                        <div className="card-thumbnail box-shadow"></div>
-                        <div className="card-detail">
-                            <div className="card-title">Title</div>
-                            <div className="card-excerpt">
-                                Lorem Ipsum is simply dummy text of the
-                                printing and typesetting
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-6 col-lg-3">
-                    <div className="card">
-                        <div className="card-thumbnail box-shadow"></div>
-                        <div className="card-detail">
-                            <div className="card-title">Title</div>
-                            <div className="card-excerpt">
-                                Lorem Ipsum is simply dummy text of the
-                                printing and typesetting
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                );
+              })}
             </div>
         </div>
       </section>

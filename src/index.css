@@ -68,7 +68,7 @@ body {
     font-size: 18px;
     line-height: 1.25;
 }
-.ab-dtl span{
+.ab-dtl .ab-dtl-ct{
     position: relative;
     z-index: 10;
 }
