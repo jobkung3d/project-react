@@ -34,7 +34,7 @@ body {
   width: 100%;
   height: 725px;
   padding-top: 95px;
-  background-image: url(images/home/header-bg.jpg);
+  background-image: url(../images/home/header-bg.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover
@@ -96,7 +96,7 @@ body {
     right: -60px;
     width: 141px;
     height: 141px;
-    background-image: url(images/home/pentagon.png);
+    background-image: url(../images/home/pentagon.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover
@@ -108,7 +108,7 @@ body {
     left: -40px;
     width: 141px;
     height: 141px;
-    background-image: url(images/home/triancle.png);
+    background-image: url(../images/home/triancle.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover

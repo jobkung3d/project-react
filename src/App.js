@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
+import './inc/css/App.css';
+import Header from './header';
+import Footer from './footer';
+
 /*class App extends Component {
   render() {
     return (
@@ -31,24 +34,6 @@ class App extends Component {
   }
 }
 
-class Header extends Component {
-  render() {
-    return (
-      <div className="wrapper-menu">
-        <div className="container">
-          <nav className="site-menu">
-              <ul>
-                <li>Home</li>
-                <li>Blog</li>
-                <li>Work</li>
-                <li>Contact</li>
-              </ul>
-          </nav>
-        </div>
-      </div>
-    );
-  }
-}
 
 class Section1 extends Component {
   render() {
@@ -138,13 +123,4 @@ class Article extends Component {
   }
 }
 
-class Footer extends Component {
-  render() {
-    return (
-      <div className="footer">
-        <div className="container">©2018 worachat.com. All rights reserved | Designed By Worachat Patanawanich</div>
-      </div>
-    );
-  }
-}
 export default App;
