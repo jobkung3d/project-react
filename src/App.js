@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import './inc/css/App.css';
+import { Link } from 'react-router-dom'
 import Header from './header';
 import Footer from './footer';
+import Tilt from 'react-tilt';
 
 /*class App extends Component {
   render() {
@@ -24,7 +24,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header styleName="header-home" />
         <Section1 />
         <About />
         <Article />
@@ -38,18 +38,36 @@ class App extends Component {
 class Section1 extends Component {
   render() {
     return (
-      <section className="section-1">
-        <div className="sec1-bg"></div>
+      <section className="section-1 home">
+        <div className="sec1-bg">
+          <div className="slide-tilt">
+            <div className="slide-banner">
+    					<div className="firefly1"></div>
+    					<div className="firefly2"></div>
+    				</div>
+            <div className="container">
+              <Tilt className="Tilt" options={{ max : 25 }}  style={{ height: 250, width: 700 }} >
+               <div className="Tilt-inner">The Begining</div>
+               <div className="tilt-line tl-1"></div>
+               <div className="tilt-line-thin tl-1 yellow"></div>
+               <div className="Tilt-inner text-right">of Something</div>
+               <div className="tilt-line tl-2"></div>
+               <div className="tilt-line-thin tl-2 yellow"></div>
+              </Tilt>
+            </div>
+          </div>
+
+        </div>
         <div className="quote">
           <div className="container">
-            <p>If people hate you don’t hate them, Do good die great.</p>
-            <p className="text-right"> - Jordan The Wholesome VRChat</p>
+            <span>If people hate you don’t hate them, Do good die great. - Jordan</span>
           </div>
         </div>
       </section>
     );
   }
 }
+
 class About extends Component {
   render() {
     return (
@@ -60,13 +78,7 @@ class About extends Component {
                 <div className="offset-lg-1 col-lg-6">
                     <div className="ab-dtl">
                         <div className="ab-dtl-ct">
-                          <p>สวัสดีครับ ชื่อนาย วรชาติ ปธานวนิช</p>
-                          <p>บ้านเกิดอยู่ที่สระบุรี แต่มาทำงานที่กรุงเทพ</p>
-                          <p>จะว่าหลงแสงสีก็ว่าได้ ฮ่า ๆ </p>
-                          <p>ชอบการเขียนเว็บ มันเป็นงานที่สนุกและท้าทาย</p>
-                          <p>ในเวลาเดียวกัน</p>
-                          <p>ตอนนี้เล่นเกมส์อะไรบ้าง ?</p>
-                          <p>OverWatch, Pubg mobile</p>
+                          <h2>Worachat Patanawanich</h2>
                         </div>
                     </div>
                 </div>
@@ -95,24 +107,27 @@ class Article extends Component {
      .then(data =>  this.setState({ data }));
 
   }
-  render() {
-    console.log(this.state.data);
-    return (
 
+  render() {
+    return (
       <section className="article">
         <div className="container">
             <div className="page-title">Article</div>
             <div className="row">
+
               {this.state.data.map(function(obj, i){
                 return (
                     <div  key={obj.id} className="col-md-6 col-lg-3">
-                        <div className="card">
-                            <div className="card-thumbnail box-shadow"></div>
-                            <div className="card-detail">
-                                <div className="card-title"  dangerouslySetInnerHTML={{__html: obj.title.rendered}}></div>
-                                <div className="card-excerpt" dangerouslySetInnerHTML={{__html: obj.excerpt.rendered}}></div>
-                            </div>
-                        </div>
+                        {  console.log(obj._links) }
+                        <Link to={`/blog/${obj.id}`}>
+                          <div className="card">
+                              <div className="card-thumbnail box-shadow"></div>
+                              <div className="card-detail">
+                                  <div className="card-title"  dangerouslySetInnerHTML={{__html: obj.title.rendered}}></div>
+                                  <div className="card-excerpt" dangerouslySetInnerHTML={{__html: obj.excerpt.rendered}}></div>
+                              </div>
+                          </div>
+                        </Link>
                     </div>
                 );
               })}
